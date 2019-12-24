@@ -4,7 +4,16 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import StoreProvider from './store';
+
+import rootReducer from './reducers';
+
+ReactDOM.render(
+  <StoreProvider reducer={rootReducer}>
+    <App />
+  </StoreProvider>,
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
